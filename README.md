@@ -8,6 +8,13 @@ O projeto Trybetunes  foi desenvolvido por [Mariana Werneck](https://www.linkedi
 
 ![Desempenho Trybetunes](img/trybetunes3.PNG)
 
+ 
+## Como utilizar:
+
+<p>Clone o repositório: <code> git@github.com:mariyzx/trybe-trybetunes.git</code>.</p>
+<p>Acesse a pasta do repositório clonado.</p>
+<p>Rode o comando <code>npm install</code> para instalar as dependências do projeto e <code>npm start</code> para visualizar no navegador.</p>
+
 ## Preview:
 
 ![Tela Trybetunes](img/trybetunes.PNG)
