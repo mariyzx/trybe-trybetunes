@@ -12,6 +12,7 @@ const GlobalStyles = createGlobalStyle`
     color: snow;
     margin: 0px;
     font-family: 'Poppins', sans-serif;
+    font-weight: bold;
   }
   
 `

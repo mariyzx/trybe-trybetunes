@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import { getUser, updateUser } from '../services/userAPI';
 import Loading from '../components/Loading';
+import { MainEdit, MainProfile } from '../styles/pages/Profile';
+import { Input } from '../styles/components/Input';
+import { Button } from '../styles/components/Button';
 
 class ProfileEdit extends React.Component {
   constructor() {
@@ -66,70 +69,62 @@ class ProfileEdit extends React.Component {
     const { loading, disabled } = this.state;
     const { inputName, inputEmail, inputInfo, inputPic } = this.state;
     return (
-      <div data-testid="page-profile-edit">
+      <div>
         <Header />
-        <div className="editProfile">
-          <h1>Editar perfil</h1>
+        <MainProfile>
+          <h1>Edit Profile</h1>
           {loading && <Loading />}
-          <form className="formEdit">
-            <img src={ inputPic } alt={ inputName } className="imgProfile2" />
+          <MainEdit>
+            <img src={ inputPic } alt="Profile" />
             <label htmlFor="changeName">
-              Nome:
-              <input
+              Name:
+              <Input
                 name="inputName"
                 type="text"
                 value={ inputName }
                 onChange={ this.handleChange }
                 id="changeName"
-                data-testid="edit-input-name"
               />
             </label>
             <label htmlFor="changeEmail">
               Email:
-              <input
+              <Input
                 type="text"
                 name="inputEmail"
                 value={ inputEmail }
                 id="changeEmail"
                 onChange={ this.handleChange }
-                data-testid="edit-input-email"
               />
             </label>
             <label htmlFor="changeInfo">
-              Descrição:
-              <input
+              Description:
+              <Input
                 type="text"
                 name="inputInfo"
                 value={ inputInfo }
                 onChange={ this.handleChange }
                 id="changeInfo"
-                data-testid="edit-input-description"
               />
             </label>
             <label htmlFor="changePic">
-              Foto
-              <input
+              Profile pic path:
+              <Input
                 type="text"
                 name="inputPic"
                 value={ inputPic }
                 onChange={ this.handleChange }
                 id="changePic"
-                data-testid="edit-input-image"
               />
             </label>
-            <div className="divButton">
-              <button
+              <Button
                 type="submit"
-                data-testid="edit-button-save"
                 disabled={ disabled }
                 onClick={ this.updateInfo }
-                className="updateButton"
               >
-                Salvar
-              </button>
-            </div>
-          </form>
-        </div>
+                Save
+              </Button>
+          </MainEdit>
+        </MainProfile>
       </div>
     );
   }

@@ -6,6 +6,7 @@ import ListAlbums from '../components/ListAlbums';
 import { MainSearch, NotFound } from '../styles/pages/Search';
 import { Button } from '../styles/components/Button';
 import { MainForm } from '../styles/components/Form';
+import { Input } from '../styles/components/Input';
 
 class Search extends React.Component {
   constructor() {
@@ -52,7 +53,7 @@ class Search extends React.Component {
             <MainForm>
               <h1>Search the artist:</h1>
               <label htmlFor="artist">
-                <input
+                <Input
                   type="text"
                   placeholder='Artist, album, song..'
                   value={ artistInput }

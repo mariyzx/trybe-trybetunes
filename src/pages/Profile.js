@@ -23,8 +23,7 @@ class Profile extends React.Component {
   returnUser = async () => {
     this.setState({ loading: true });
     const user = await getUser();
-    this.setState({ loading: false, user, user: { image:  'https://iev.com.br/wp-content/uploads/2020/03/the-office-2-1.jpg'
-  } });
+    this.setState({ loading: false, user });
   }
 
   render() {

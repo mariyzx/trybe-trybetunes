@@ -18,3 +18,22 @@ export const MainProfile = styled.div`
     border-radius: 30px;
   }
 `
+
+export const MainEdit = styled.div `
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 300px;
+  }
+
+  label {
+    width: 100%;
+  }
+
+  label > input {
+    width: 100%;
+  }
+`
