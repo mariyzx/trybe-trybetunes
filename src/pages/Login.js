@@ -67,9 +67,6 @@ class Login extends React.Component {
                 </button>
               </form>
             )}
-          <div>
-            <footer>Desenvolvido por Mariana Werneck em 2022.</footer>
-          </div>
           { redirect && <Redirect to="/search" /> }
         </div>
       </div>
