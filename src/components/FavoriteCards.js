@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Loading from '../pages/Loading';
+import Loading from './Loading';
 import { removeSong, addSong } from '../services/favoriteSongsAPI';
+import { AiFillStar } from 'react-icons/ai';
+import { CardMusic } from '../styles/pages/Album';
 
 class FavoriteCards extends React.Component {
   constructor() {
@@ -37,18 +39,19 @@ class FavoriteCards extends React.Component {
 
   render() {
     const { song } = this.props;
-    const { trackName, previewUrl, trackId, artistName } = song;
+    const { trackName, previewUrl, trackId, artistName, artworkUrl100 } = song;
     const { checked, loading } = this.state;
     return (
       <div>
         {loading && <Loading />}
         {checked && (
-          <div className="songFav">
-            <h4 className="songName">{ trackName }</h4>
+          <CardMusic>
+            <img src={ artworkUrl100 } alt="" />
+            <h3 className="songName">{ trackName }</h3>
             <h4>{ artistName }</h4>
             <audio data-testid="audio-component" src={ previewUrl } controls>
               <track kind="captions" />
-              O seu navegador não suporta o elemento
+              Your browser doesn't support the element!
               {' '}
               <code>audio</code>
             </audio>
@@ -62,8 +65,9 @@ class FavoriteCards extends React.Component {
                 name="favorite"
                 checked={ checked }
               />
+              <AiFillStar />
             </label>
-          </div>
+          </CardMusic>
         )}
       </div>
     );

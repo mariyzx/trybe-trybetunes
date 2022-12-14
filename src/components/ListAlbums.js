@@ -1,34 +1,35 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { DivAlbums, MainAlbums } from '../styles/components/ListAlbums';
 
 class ListAlbums extends React.Component {
   render() {
     const { response, artistInput } = this.props;
     return (
-      <div>
+      <MainAlbums>
         <p className="result">
-          Resultado de álbuns de:
+          Results of
           {' '}
           {artistInput}
           {' '}
         </p>
-        <div className="listAlbums">
+        <DivAlbums className="listAlbums">
           { response.map((album, index) => (
             <div key={ index } className="album">
-              <img src={ album.artworkUrl100 } alt="Álbum" className="img" />
+              <img src={ album.artworkUrl100 } alt="Album" className="img" />
               <h2>{album.collectionName}</h2>
               <h3>{album.artistName}</h3>
               <Link
                 to={ `/album/${album.collectionId}` }
                 data-testid={ `link-to-album-${album.collectionId}` }
               >
-                Mais
+                Details
               </Link>
             </div>
           )) }
-        </div>
-      </div>
+        </DivAlbums>
+      </MainAlbums>
     );
   }
 }

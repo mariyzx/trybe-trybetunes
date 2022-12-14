@@ -1,9 +1,10 @@
 import React from "react";
+import { MainFooter } from "../styles/components/Footer";
 
 class Footer extends React.Component {
   render() {
     return (
-      <footer>Desenvolvido por Mariana Werneck em 2022.</footer>
+      <MainFooter><p>Developed by Mariana Werneck in 2022.</p></MainFooter>
     )
   }
 }
