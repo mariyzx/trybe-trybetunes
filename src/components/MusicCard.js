@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Loading from './Loading';
-import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
+import { AiOutlineStar } from 'react-icons/ai';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import { CardMusic } from '../styles/pages/Album';
 

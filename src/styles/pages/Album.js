@@ -17,13 +17,6 @@ export const InfoDetails = styled.div`
   flex-direction: column;
   margin-bottom: 3rem;
 
-  div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 5px;
-  }
 `
 
 export const MusicList = styled.ul`
@@ -35,7 +28,17 @@ export const MusicList = styled.ul`
 `
 
 export const CardMusic = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+
   label > input {
     display: none;
+  }
+
+  img {
+    margin-top: 1rem;
   }
 `

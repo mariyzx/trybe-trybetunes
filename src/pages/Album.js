@@ -37,7 +37,7 @@ class Album extends React.Component {
           <InfoDetails>
             <div>
               <h2 data-testid="album-name">{collectionName}</h2>
-              <img src={ artworkUrl100 } alt={ collectionName } className="teste" />
+              <img src={ artworkUrl100 } alt={ collectionName } />
             </div>
             <MusicList>
                 {songs.filter((song) => song !== info)
