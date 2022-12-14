@@ -2,7 +2,7 @@ import React from 'react';
 import FavoriteCards from '../components/FavoriteCards';
 import Header from '../components/Header';
 import { getFavoriteSongs } from '../services/favoriteSongsAPI';
-import Loading from './Loading';
+import Loading from '../components/Loading';
 
 class Favorites extends React.Component {
   constructor() {

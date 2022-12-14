@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import './index.css';
 import Album from './pages/Album';
 import Favorites from './pages/Favorites';
 import Login from './pages/Login';
@@ -8,6 +7,7 @@ import NotFound from './pages/NotFound';
 import Profile from './pages/Profile';
 import ProfileEdit from './pages/ProfileEdit';
 import Search from './pages/Search';
+import GlobalStyles from './styles/GlobalStyles';
 
 class App extends React.Component {
   render() {
@@ -22,6 +22,7 @@ class App extends React.Component {
           <Route exact path="/profile/edit" component={ ProfileEdit } />
           <Route path="*" component={ NotFound } />
         </Switch>
+        <GlobalStyles />
       </BrowserRouter>
     );
   }

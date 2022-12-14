@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Loading from '../pages/Loading';
+import Loading from './Loading';
 import { removeSong, addSong } from '../services/favoriteSongsAPI';
 
 class FavoriteCards extends React.Component {

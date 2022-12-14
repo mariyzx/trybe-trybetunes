@@ -1,8 +1,11 @@
 import React from 'react';
 import Header from '../components/Header';
-import Loading from './Loading';
+import Loading from '../components/Loading';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import ListAlbums from '../components/ListAlbums';
+import { MainSearch, NotFound } from '../styles/pages/Search';
+import { Button } from '../styles/components/Button';
+import { MainForm } from '../styles/components/Form';
 
 class Search extends React.Component {
   constructor() {
@@ -12,7 +15,6 @@ class Search extends React.Component {
       buttonDisabled: true,
       artistInput: '',
       loading: false,
-      clear: false,
       response: [],
     };
   }
@@ -35,43 +37,42 @@ class Search extends React.Component {
 
   fetchArtist = async () => {
     const { artistInput } = this.state;
-    this.setState({ loading: true, clear: true });
+    this.setState({ loading: true });
     const response = await searchAlbumsAPI(artistInput);
-    this.setState({ loading: false, response });
+    this.setState({ loading: false, response, artistInput: ' ' });
   }
 
   render() {
-    const { buttonDisabled, artistInput, loading, clear, response } = this.state;
+    const { buttonDisabled, artistInput, loading, response } = this.state;
     return (
-      <div data-testid="page-search" className="divSearch">
+      <MainSearch>
         <Header />
         {loading ? <Loading />
           : (
-            <form>
-              <h1>Procure o artista:</h1>
+            <MainForm>
+              <h1>Search the artist:</h1>
               <label htmlFor="artist">
                 <input
                   type="text"
-                  data-testid="search-artist-input"
-                  value={ clear ? '' : artistInput }
+                  placeholder='Artist, album, song..'
+                  value={ artistInput }
                   onChange={ this.inputArtist }
                 />
               </label>
-              <button
+              <Button
                 type="submit"
-                data-testid="search-artist-button"
                 disabled={ buttonDisabled }
                 onClick={ this.fetchArtist }
                 className="searchButton"
               >
-                Pesquisar
-              </button>
-            </form>
+                Search
+              </Button>
+            </MainForm>
           )}
         {(response.length > 0 && artistInput !== '')
           ? <ListAlbums { ...this.state } />
-          : <p>Nenhum álbum foi encontrado</p>}
-      </div>
+          : <NotFound><p>Sorry, not found! :(</p></NotFound>}
+      </MainSearch>
     );
   }
 }

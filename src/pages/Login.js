@@ -1,7 +1,11 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
-import Loading from './Loading';
+import MainLogin from '../styles/pages/Login';
+import Loading from '../components/Loading';
+import logo from '../assets/images/logo.png';
+import { MainForm } from '../styles/components/Form';
+import { Button } from '../styles/components/Button';
 
 class Login extends React.Component {
   constructor() {
@@ -42,34 +46,27 @@ class Login extends React.Component {
   render() {
     const { buttonDisabled, loading, redirect } = this.state;
     return (
-      <div data-testid="page-login">
-        <div className="divLogin">
-          <h1>Trybetunes!</h1>
-          {loading ? <Loading />
-            : (
-              <form>
-                <label htmlFor="name" className="nameLabel">
-                  Insira seu nome:
-                  <input
-                    type="text"
-                    data-testid="login-name-input"
-                    onChange={ this.verify }
-                  />
-                </label>
-                <button
-                  type="submit"
-                  data-testid="login-submit-button"
-                  disabled={ buttonDisabled }
-                  onClick={ this.submit }
-                  className="submitLogin"
-                >
-                  Entrar
-                </button>
-              </form>
-            )}
-          { redirect && <Redirect to="/search" /> }
-        </div>
-      </div>
+      <MainLogin>
+        <img src={logo} alt="" />
+        {loading ? <Loading />
+          : (
+            <MainForm>
+              <input
+                type="text"
+                onChange={ this.verify }
+                placeholder="Insert your name.."
+              />
+              <Button
+                type="submit"
+                disabled={ buttonDisabled }
+                onClick={ this.submit }
+              >
+                Login
+              </Button>
+            </MainForm>
+          )}
+        { redirect && <Redirect to="/search" /> }
+      </MainLogin>
     );
   }
 }
