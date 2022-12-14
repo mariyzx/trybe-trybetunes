@@ -6,6 +6,7 @@ import Loading from '../components/Loading';
 import logo from '../assets/images/logo.png';
 import { MainForm } from '../styles/components/Form';
 import { Button } from '../styles/components/Button';
+import {Input} from '../styles/components/Input';
 
 class Login extends React.Component {
   constructor() {
@@ -51,7 +52,7 @@ class Login extends React.Component {
         {loading ? <Loading />
           : (
             <MainForm>
-              <input
+              <Input
                 type="text"
                 onChange={ this.verify }
                 placeholder="Insert your name.."
