@@ -43,7 +43,6 @@ class FavoriteCards extends React.Component {
     const { checked, loading } = this.state;
     return (
       <div>
-        {console.log(song)}
         {loading && <Loading />}
         {checked && (
           <CardMusic>

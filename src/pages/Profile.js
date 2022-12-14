@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import { getUser } from '../services/userAPI';
 import Loading from '../components/Loading';
+import { MainProfile } from '../styles/pages/Profile';
 
 class Profile extends React.Component {
   constructor() {
@@ -10,7 +11,8 @@ class Profile extends React.Component {
 
     this.state = {
       loading: false,
-      user: {},
+      user: {
+      },
     };
   }
 
@@ -21,28 +23,28 @@ class Profile extends React.Component {
   returnUser = async () => {
     this.setState({ loading: true });
     const user = await getUser();
-    this.setState({ loading: false, user });
+    this.setState({ loading: false, user, user: { image:  'https://iev.com.br/wp-content/uploads/2020/03/the-office-2-1.jpg'
+  } });
   }
 
   render() {
     const { loading, user } = this.state;
     const { description, email, image, name } = user;
     return (
-      <div data-testid="page-profile">
+      <div>
         <Header />
-        <div className="divProfile">
-          <h1>Perfil</h1>
+        <MainProfile>
+          <h1>Profile</h1>
           {loading && <Loading />}
-          <Link to="/profile/edit">Editar perfil</Link>
+          <Link to="/profile/edit">Edit Profile</Link>
           <img
-            data-testid="profile-image"
             src={ image }
+            width="400px"
             alt={ name }
-            className="imgProfile"
           />
           <div className="info">
             <h4>
-              Nome:
+              Name:
               {' '}
               {name}
             </h4>
@@ -52,12 +54,12 @@ class Profile extends React.Component {
               {email}
             </h5>
             <h4>
-              Descrição:
+              Description:
               {' '}
               {description}
             </h4>
           </div>
-        </div>
+        </MainProfile>
       </div>
     );
   }
