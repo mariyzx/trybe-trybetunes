@@ -57,7 +57,7 @@ class MusicCard extends React.Component {
           <h4>{ trackName }</h4>
           <audio data-testid="audio-component" src={ previewUrl } controls>
             <track kind="captions" />
-            O seu navegador não suporta o elemento
+            Your browser doesn't support the element!
             {' '}
             <code>audio</code>
           </audio>

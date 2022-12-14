@@ -37,6 +37,7 @@ export const DivAlbums = styled.div`
 
     a {
       color:  #27c083;
+      font-weight: bold;
     }
 
     img {

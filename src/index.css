@@ -4,19 +4,6 @@
 
 /* Componente ListAlbums */
 
-.result {
-  text-align: center;
-}
-
-.listAlbums {
-  margin-left: 100px;
-  margin-top: 30px;
-  justify-content: center;
-  display: flex;
-  flex-wrap: wrap;
-  width: 700px;
-}
-
 .img {
   width: 130px;
   transition: all .3s ease-in-out; 

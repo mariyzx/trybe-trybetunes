@@ -21,6 +21,7 @@ export const MainHeader = styled.div`
 
   nav > a {
     text-decoration: none;
+    font-weight: bolder;
     color: #f2f2f2;
   }
 

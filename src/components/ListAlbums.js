@@ -17,14 +17,14 @@ class ListAlbums extends React.Component {
         <DivAlbums className="listAlbums">
           { response.map((album, index) => (
             <div key={ index } className="album">
-              <img src={ album.artworkUrl100 } alt="Álbum" className="img" />
+              <img src={ album.artworkUrl100 } alt="Album" className="img" />
               <h2>{album.collectionName}</h2>
               <h3>{album.artistName}</h3>
               <Link
                 to={ `/album/${album.collectionId}` }
                 data-testid={ `link-to-album-${album.collectionId}` }
               >
-                Mais
+                Details
               </Link>
             </div>
           )) }

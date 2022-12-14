@@ -9,5 +9,6 @@ export const MainFooter = styled.footer`
 
   p {
     text-align: center;
+    font-weight: bold;
   }
 `
