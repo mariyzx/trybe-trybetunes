@@ -12,6 +12,7 @@ export const MainHeader = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  z-index: 2;
 
   nav {
     display: flex;

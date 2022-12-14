@@ -40,13 +40,11 @@ class Album extends React.Component {
               <img src={ artworkUrl100 } alt={ collectionName } className="teste" />
             </div>
             <MusicList>
-              <li>
                 {songs.filter((song) => song !== info)
                   .map((song) => (<MusicCard
                     song={ song }
                     key={ song.trackId }
                   />))}
-              </li>
             </MusicList>
           </InfoDetails>
         </MainDetails>

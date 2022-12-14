@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Loading from './Loading';
+import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
+import { CardMusic } from '../styles/pages/Album';
 
 class MusicCard extends React.Component {
   constructor() {
@@ -48,32 +50,29 @@ class MusicCard extends React.Component {
 
   render() {
     const { song } = this.props;
-    const { trackName, previewUrl, trackId } = song;
+    const { trackName, previewUrl } = song;
     const { loading, checked } = this.state;
     return (
-      <div>
+      <CardMusic>
         {loading && <Loading /> }
-        <div className="fav">
-          <h4>{ trackName }</h4>
-          <audio data-testid="audio-component" src={ previewUrl } controls>
-            <track kind="captions" />
-            Your browser doesn't support the element!
-            {' '}
-            <code>audio</code>
-          </audio>
-          <label htmlFor="favorite" className="labelFav">
-            Favorita
-            <input
-              type="checkbox"
-              id="favorite"
-              data-testid={ `checkbox-music-${trackId}` }
-              onChange={ this.handleFavs }
-              name="favorite"
-              checked={ checked }
-            />
-          </label>
-        </div>
-      </div>
+        <h4>{ trackName }</h4>
+        <audio src={ previewUrl } controls>
+          <track kind="captions" />
+          Your browser doesn't support the element!
+          {' '}
+          <code>audio</code>
+        </audio>
+        <label htmlFor="favorite">
+          <input
+            type="checkbox"
+            id="favorite"
+            onChange={ this.handleFavs }
+            name="favorite"
+            checked={ checked }
+          />
+          <AiOutlineStar />
+        </label>
+      </CardMusic>
     );
   }
 }

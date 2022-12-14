@@ -11,7 +11,7 @@ const GlobalStyles = createGlobalStyle`
     background-color: #037459;
     color: snow;
     margin: 0px;
-    font-family: 'Poppins', sans-serif;;
+    font-family: 'Poppins', sans-serif;
   }
   
 `
