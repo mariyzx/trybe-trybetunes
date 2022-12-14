@@ -23,18 +23,25 @@ export const DivAlbums = styled.div`
     background-color: #035f49;
     border: 2px solid transparent;
     border-radius: 13px;
-    min-height: 300px;
+    min-height: 330px;
     width: 20%;
     overflow: hidden;
     flex-wrap: wrap;
     gap: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+    font-size: 13px;
     align-items: center;
+    padding: 5px;
 
     a {
       color:  #27c083;
+    }
+
+    img {
+      border: 2px solid transparent;
+      border-radius: 10%;
     }
   }
 
