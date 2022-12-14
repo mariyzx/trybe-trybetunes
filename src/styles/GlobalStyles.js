@@ -9,9 +9,9 @@ const GlobalStyles = createGlobalStyle`
 
   html,	body {
     background-color: #037459;
-    color: white;
+    color: snow;
     margin: 0px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;;
   }
   
 `
