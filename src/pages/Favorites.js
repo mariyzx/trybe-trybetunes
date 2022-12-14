@@ -3,6 +3,7 @@ import FavoriteCards from '../components/FavoriteCards';
 import Header from '../components/Header';
 import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 import Loading from '../components/Loading';
+import { DivFavorites } from '../styles/pages/Favorites';
 
 class Favorites extends React.Component {
   constructor() {
@@ -27,14 +28,14 @@ class Favorites extends React.Component {
   render() {
     const { loading, favs } = this.state;
     return (
-      <div data-testid="page-favorites">
+      <DivFavorites>
         <Header />
         <h1 className="titleFavs">Favoritas</h1>
         <div className="divFavorites">
           {loading ? <Loading />
             : favs.map((msc) => <FavoriteCards song={ msc } key={ msc.trackId } />) }
         </div>
-      </div>
+      </DivFavorites>
     );
   }
 }
